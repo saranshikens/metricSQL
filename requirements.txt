@@ -1,0 +1,10 @@
+numpy
+pandas
+lark
+sentence-transformers
+torch
+matplotlib
+rich
+typer
+tabulate
+pybind11

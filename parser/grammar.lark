@@ -1,0 +1,30 @@
+start: statement
+
+statement: select_stmt | insert_stmt | create_table_stmt | delete_stmt
+
+select_stmt: "SELECT" "*" "FROM" NAME where_clause? similarity_clause? top_clause?
+
+insert_stmt: "INSERT" "INTO" NAME "VALUES" "(" value_list ")"
+
+create_table_stmt: "CREATE" "TABLE" NAME "(" column_definitions ")"
+
+delete_stmt: "DELETE" "FROM" NAME where_clause
+
+where_clause: "WHERE" NAME "=" STRING
+
+similarity_clause: "SIMILAR" "TO" NAME STRING
+
+top_clause: "TOP" NUMBER
+
+value_list: STRING ("," STRING)*
+
+column_definitions: column_definition ("," column_definition)*
+
+column_definition: NAME NAME
+
+%import common.CNAME -> NAME
+%import common.ESCAPED_STRING -> STRING
+%import common.NUMBER
+%import common.WS
+
+%ignore WS
