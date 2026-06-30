@@ -1,8 +1,26 @@
+# Virtual environment
 venv/
+
+# Python cache
 __pycache__/
 *.pyc
+
+# C++ build files
 build/
-dist/
+
+# Compiled Python extensions
+*.pyd
 *.so
-data/
-.huggingface/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# HuggingFace cache (optional)
+.cache/
+
+# Temporary files
+*.log

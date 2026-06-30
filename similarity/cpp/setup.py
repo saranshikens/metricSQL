@@ -1,22 +1,43 @@
-from setuptools import setup, Extension
-import pybind11
+from setuptools import setup
+from pybind11.setup_helpers import (
+    Pybind11Extension,
+    build_ext
+)
 
 ext_modules = [
-    Extension(
+
+    Pybind11Extension(
+
         "ght_cpp",
+
         [
             "bindings.cpp",
             "ght.cpp"
         ],
-        include_dirs=[
-            pybind11.get_include()
+
+        cxx_std=17
+    ),
+
+    Pybind11Extension(
+
+        "metric_ght_cpp",
+
+        [
+            "metric_bindings.cpp",
+            "metric_ght.cpp"
         ],
-        language="c++",
-        extra_compile_args=["-std=c++17"]
+
+        cxx_std=17
     )
 ]
 
 setup(
-    name="ght_cpp",
+
+    name="metric_cpp",
+
     ext_modules=ext_modules,
+
+    cmdclass={
+        "build_ext": build_ext
+    }
 )
