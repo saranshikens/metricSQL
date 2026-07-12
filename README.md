@@ -60,7 +60,7 @@ metricSQL/
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/metricSQL.git
+git clone https://github.com/saranshikens/metricSQL.git
 
 cd metricSQL
 ```
